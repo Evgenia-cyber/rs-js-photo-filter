@@ -74,3 +74,33 @@ body {
 }
 
 /********* /filter *********/
+
+/********* presets *********/
+.presets {
+  font-size: 0; /*чтобы убрать расстояние между img*/
+}
+
+.presets-img:hover {
+  cursor: pointer;
+}
+
+.preset1 {
+  filter: brightness(81%) saturate(190%);
+}
+
+.preset2 {
+  filter: brightness(110%) contrast(111%) hue-rotate(16deg);
+}
+
+.preset3 {
+  filter: grayscale(49%) hue-rotate(339deg) sepia(12%);
+}
+
+.preset4 {
+  filter: saturate(56%) sepia(10%);
+}
+
+.preset5 {
+  filter: sepia(100%) opacity(78%);
+}
+/********* /presets *********/
