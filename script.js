@@ -38,39 +38,35 @@ function handleOnPresetClick() {
         ? parseFloat(arr[1])
         : Math.round(parseFloat(arr[1]) * 100);
 
-    // const filterSize =
-    //   filterName === 'blur' ? 'px' : filterName === 'hue-rotate' ? 'deg' : '%';
-    const filterSize = initFilters[filterName][1];
-
-    const inputEl = document.querySelector(`#${filterName}`);
-    inputEl.value = filterValue;
-
-    const filterValueEl = document.querySelector(`.filter-value-${filterName}`);
-    filterValueEl.textContent = filterValue;
-
-    document.documentElement.style.setProperty(
-      `--${filterName}`,
-      filterValue + filterSize,
-    );
+    setFiltersValue(filterName, filterValue);
   });
 }
 
 function resetFilters() {
   Object.keys(initFilters).forEach((filter) => {
     const filterValue = initFilters[filter][0];
-    const filterSize = initFilters[filter][1];
 
-    const filterValueEl = document.querySelector(`.filter-value-${filter}`);
-    filterValueEl.textContent = filterValue;
-
-    document.documentElement.style.setProperty(
-      `--${filter}`,
-      filterValue + filterSize,
-    );
+    setFiltersValue(filter, filterValue);
   });
 }
 
+function setFiltersValue(filterName, filterValue) {
+  const filterSize = initFilters[filterName][1];
+
+  const inputEl = document.querySelector(`#${filterName}`);
+  inputEl.value = filterValue;
+
+  const filterValueEl = document.querySelector(`.filter-value-${filterName}`);
+  filterValueEl.textContent = filterValue;
+
+  document.documentElement.style.setProperty(
+    `--${filterName}`,
+    filterValue + filterSize,
+  );
+}
+
 inputs.forEach((input) => input.addEventListener('change', handleChange));
+
 presets.forEach((preset) =>
   preset.addEventListener('click', handleOnPresetClick),
 );
