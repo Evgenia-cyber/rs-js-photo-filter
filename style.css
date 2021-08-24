@@ -9,6 +9,7 @@
 
   --blur: 0px;
   --brightness: 100%;
+  --contrast: 100%;
 }
 
 body {
@@ -27,7 +28,8 @@ body {
   justify-content: space-between;
 }
 .img {
-  filter: blur(var(--blur)) brightness(var(--brightness));
+  filter: blur(var(--blur)) brightness(var(--brightness))
+    contrast(var(--contrast));
 }
 
 /********* filter *********/
