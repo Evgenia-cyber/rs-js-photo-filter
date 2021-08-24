@@ -3,8 +3,11 @@
   --color-gold: #9d8665;
   --color-white: #ffffff;
   --constant-bg-color: #1a1920;
+  --constant-bg-color-hover: #000000;
 
   --font-bold: 700;
+
+  --border-radius: 3px;
 
   --transition-duration: 0.3s;
 
@@ -63,7 +66,7 @@ body {
 
 .filter {
   background: var(--color-gold);
-  border-radius: 3px;
+  border-radius: var(--border-radius);
   height: 3px;
   width: 300px;
   outline: none;
@@ -130,7 +133,7 @@ body {
   margin-bottom: 20px;
   margin-top: 5px;
   background: none;
-  border-radius: 3px;
+  border-radius: var(--border-radius);
   border: 2px solid var(--color-gold);
   box-sizing: border-box;
 }
@@ -142,3 +145,24 @@ input[type='color']::-webkit-color-swatch {
   border: none;
 }
 /********* /color *********/
+
+/********* buttons *********/
+.buttons {
+  display: flex;
+  max-width: 750px;
+  justify-content: space-between;
+}
+
+.button {
+  padding: 10px 16px;
+  background-color: var(--constant-bg-color);
+  border: 1px solid var(--color-gold);
+  border-radius: var(--border-radius);
+  transition: background-color var(--transition-duration);
+}
+
+.button:hover {
+  background-color: var(--constant-bg-color-hover);
+  cursor: pointer;
+}
+/********* /buttons *********/

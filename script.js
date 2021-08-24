@@ -12,6 +12,15 @@ const initFilters = {
   sepia: [0, '%'],
 };
 
+const initAll = {
+  ...initFilters,
+  size: [750, 'px'],
+  'bg-color': ['#1a1920', ''],
+};
+
+const resetAllBtn = document.querySelector('.reset-all-btn');
+const resetFiltersBtn = document.querySelector('.reset-filters-btn');
+
 function handleChange(event) {
   const value = this.value;
 
@@ -24,7 +33,7 @@ function handleChange(event) {
 }
 
 function handleOnPresetClick() {
-  resetFilters();
+  reset(initFilters);
 
   const { filter } = window.getComputedStyle(this); // 'brightness(0.81) saturate(1.9)'
 
@@ -42,16 +51,16 @@ function handleOnPresetClick() {
   });
 }
 
-function resetFilters() {
-  Object.keys(initFilters).forEach((filter) => {
-    const filterValue = initFilters[filter][0];
+function resetData(initData) {
+  Object.keys(initData).forEach((item) => {
+    const itemValue = initData[item][0];
 
-    setFiltersValue(filter, filterValue);
+    setFiltersValue(item, itemValue);
   });
 }
 
 function setFiltersValue(filterName, filterValue) {
-  const filterSize = initFilters[filterName][1];
+  const filterSize = initAll[filterName][1];
 
   const inputEl = document.querySelector(`#${filterName}`);
   inputEl.value = filterValue;
@@ -65,8 +74,20 @@ function setFiltersValue(filterName, filterValue) {
   );
 }
 
+function handleOnResetAllBtnClick() {
+  resetData(initAll);
+}
+
+function handleOnResetFiltersBtnClick() {
+  resetData(initFilters);
+}
+
 inputs.forEach((input) => input.addEventListener('change', handleChange));
 
 presets.forEach((preset) =>
   preset.addEventListener('click', handleOnPresetClick),
 );
+
+resetAllBtn.addEventListener('click', handleOnResetAllBtnClick);
+
+resetFiltersBtn.addEventListener('click', handleOnResetFiltersBtnClick);
