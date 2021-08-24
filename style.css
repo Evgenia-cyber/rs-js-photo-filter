@@ -1,5 +1,5 @@
 :root {
-  --bg-dark: #1a1920;
+  --bg-color: #1a1920;
   --color-gold: #9d8665;
   --color-white: #ffffff;
 
@@ -8,12 +8,13 @@
   --transition-duration: 0.3s;
 
   --blur: 0px;
+  --brightness: 100%;
 }
 
 body {
   font-family: 'Roboto', sans-serif;
   color: var(--color-gold);
-  background-color: var(--bg-dark);
+  background-color: var(--bg-color);
 }
 
 .main-container {
@@ -26,7 +27,7 @@ body {
   justify-content: space-between;
 }
 .img {
-  filter: blur(var(--blur));
+  filter: blur(var(--blur)) brightness(var(--brightness));
 }
 
 /********* filter *********/
@@ -36,6 +37,7 @@ body {
   justify-content: space-between;
   align-items: center;
   width: 335px;
+  margin-bottom: 16px;
 }
 
 .filter {
