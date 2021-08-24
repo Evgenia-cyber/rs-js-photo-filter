@@ -19,8 +19,6 @@
           class="img"
           src="assets/images/img.jpg"
           alt="seashell by the sea"
-          width="750"
-          height="500"
         />
         <!-- filters -->
         <div class="filters">
@@ -193,8 +191,9 @@
           />
         </div>
         <!-- /presets -->
-        <!-- color -->
-        <div>
+        <!-- color and size -->
+        <div class="color-and-size">
+          <!-- color -->
           <label for="bg-color">Change color: </label>
           <div>
             <input
@@ -205,9 +204,24 @@
             />
             <span class="filter-value filter-value-bg-color">#1a1920</span>
           </div>
+          <!-- /color -->
+          <!-- size -->
+          <label for="size">Change photo size: </label>
+          <div class="filter-container">
+            <input
+              class="filter"
+              type="range"
+              id="size"
+              min="300"
+              max="750"
+              value="750"
+              data-size="px"
+            />
+            <span class="filter-value filter-value-size">750</span>
+          </div>
+          <!-- size -->
         </div>
-
-        <!-- /color -->
+        <!-- /color and size -->
       </div>
     </main>
 

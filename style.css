@@ -17,6 +17,8 @@
   --opacity: 100%;
   --saturate: 100%;
   --sepia: 0%;
+
+  --size: 750px;
 }
 
 body {
@@ -36,12 +38,15 @@ body {
 }
 
 .img {
+  width: var(--size);
+  height: auto;
+  object-fit: cover;
   filter: blur(var(--blur)) brightness(var(--brightness))
     contrast(var(--contrast)) grayscale(var(--grayscale))
     hue-rotate(var(--hue-rotate)) invert(var(--invert)) opacity(var(--opacity))
     saturate(var(--saturate)) sepia(var(--sepia));
 }
-.filters{
+.filters {
   background-color: var(--constant-bg-color);
   padding: 10px 10px 0;
 }
@@ -112,13 +117,22 @@ body {
 /********* /presets *********/
 
 /********* color *********/
+.color-and-size {
+  background-color: var(--constant-bg-color);
+  padding: 0 10px;
+}
+
 .filter-color {
+  height: 20px;
+  width: 260px;
+  padding: 0;
+  margin-right: 5px;
+  margin-bottom: 20px;
+  margin-top: 5px;
   background: none;
   border-radius: 3px;
   border: 2px solid var(--color-gold);
-  height: 20px;
-  width: 260px;
-  margin-right: 5px;
+  box-sizing: border-box;
 }
 
 input[type='color']::-webkit-color-swatch-wrapper {
