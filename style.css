@@ -12,6 +12,7 @@
   --contrast: 100%;
   --grayscale: 0%;
   --hue-rotate: 0deg;
+  --invert: 0%;
 }
 
 body {
@@ -32,7 +33,7 @@ body {
 .img {
   filter: blur(var(--blur)) brightness(var(--brightness))
     contrast(var(--contrast)) grayscale(var(--grayscale))
-    hue-rotate(var(--hue-rotate));
+    hue-rotate(var(--hue-rotate)) invert(var(--invert));
 }
 
 /********* filter *********/
