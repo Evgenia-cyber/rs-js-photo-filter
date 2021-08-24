@@ -10,6 +10,7 @@
   --blur: 0px;
   --brightness: 100%;
   --contrast: 100%;
+  --grayscale: 0%;
 }
 
 body {
@@ -29,7 +30,7 @@ body {
 }
 .img {
   filter: blur(var(--blur)) brightness(var(--brightness))
-    contrast(var(--contrast));
+    contrast(var(--contrast)) grayscale(var(--grayscale));
 }
 
 /********* filter *********/
