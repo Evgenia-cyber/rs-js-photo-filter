@@ -21,6 +21,9 @@ const initAll = {
 const resetAllBtn = document.querySelector('.reset-all-btn');
 const resetFiltersBtn = document.querySelector('.reset-filters-btn');
 
+const imgEl = document.querySelector('.img');
+const inputLoadFileEl = document.querySelector('.load-file-input');
+
 function handleChange(event) {
   const value = this.value;
 
@@ -33,7 +36,7 @@ function handleChange(event) {
 }
 
 function handleOnPresetClick() {
-  reset(initFilters);
+  resetData(initFilters);
 
   const { filter } = window.getComputedStyle(this); // 'brightness(0.81) saturate(1.9)'
 
@@ -82,6 +85,18 @@ function handleOnResetFiltersBtnClick() {
   resetData(initFilters);
 }
 
+function handleOnLoadImg() {
+  const imgFile = this.files[0];
+  imgEl.alt = 'photo for filter';
+  const reader = new FileReader();
+  reader.onload = (function (aImg) {
+    return function (event) {
+      aImg.src = event.target.result;
+    };
+  })(imgEl);
+  reader.readAsDataURL(imgFile);
+}
+
 inputs.forEach((input) => input.addEventListener('change', handleChange));
 
 presets.forEach((preset) =>
@@ -91,3 +106,5 @@ presets.forEach((preset) =>
 resetAllBtn.addEventListener('click', handleOnResetAllBtnClick);
 
 resetFiltersBtn.addEventListener('click', handleOnResetFiltersBtnClick);
+
+inputLoadFileEl.addEventListener('change', handleOnLoadImg);

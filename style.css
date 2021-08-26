@@ -165,4 +165,8 @@ input[type='color']::-webkit-color-swatch {
   background-color: var(--constant-bg-color-hover);
   cursor: pointer;
 }
+
+.load-file-input {
+  display: none;
+}
 /********* /buttons *********/
