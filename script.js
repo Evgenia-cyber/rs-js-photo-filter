@@ -93,7 +93,12 @@ function handleOnLoadImg() {
   const reader = new FileReader();
   reader.onload = (function (aImg) {
     return function (event) {
-      aImg.src = event.target.result;
+      const imgSrc = event.target.result;
+      aImg.src = imgSrc;
+      presets.forEach((preset, index) => {
+        preset.src = imgSrc;
+        preset.alt = `photo for filter with filters preset${index + 1}`;
+      });
     };
   })(imgEl);
   reader.readAsDataURL(imgFile);
