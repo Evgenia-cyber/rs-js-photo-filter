@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="favicon.ico" />
+    <title>PhotoFilter</title>
+  </head>
+  <body>
+    <main class="main-container">
+      <div class="container">
+        <div class="container-img">
+          <img
+            class="img"
+            src="assets/images/img.jpg"
+            alt="seashell by the sea"
+          />
+        </div>
+        <!-- filters -->
+        <div class="filters">
+          <label for="blur">Blur: </label>
+          <div class="filter-container">
+            <input
+              class="filter"
+              type="range"
+              id="blur"
+              min="0"
+              max="10"
+              value="0"
+              data-size="px"
+            />
+            <span class="filter-value filter-value-blur">0</span>
+          </div>
+          <!-- ****** -->
+          <label for="brightness">Brightness: </label>
+          <div class="filter-container">
+            <input
+              class="filter"
+              type="range"
+              id="brightness"
+              min="0"
+              max="200"
+              value="100"
+              data-size="%"
+            />
+            <span class="filter-value filter-value-brightness">100</span>
+          </div>
+          <!-- ****** -->
+          <label for="contrast">Contrast: </label>
+          <div class="filter-container">
+            <input
+              class="filter"
+              type="range"
+              id="contrast"
+              min="0"
+              max="200"
+              value="100"
+              data-size="%"
+            />
+            <span class="filter-value filter-value-contrast">100</span>
+          </div>
+          <!-- ****** -->
+          <label for="grayscale">Grayscale: </label>
+          <div class="filter-container">
+            <input
+              class="filter"
+              type="range"
+              id="grayscale"
+              min="0"
+              max="100"
+              value="0"
+              data-size="%"
+            />
+            <span class="filter-value filter-value-grayscale">0</span>
+          </div>
+          <!-- ****** -->
+          <label for="hue-rotate">Hue: </label>
+          <div class="filter-container">
+            <input
+              class="filter"
+              type="range"
+              id="hue-rotate"
+              min="0"
+              max="360"
+              value="0"
+              data-size="deg"
+            />
+            <span class="filter-value filter-value-hue-rotate">0</span>
+          </div>
+          <!-- ****** -->
+          <label for="invert">Invert: </label>
+          <div class="filter-container">
+            <input
+              class="filter"
+              type="range"
+              id="invert"
+              min="0"
+              max="100"
+              value="0"
+              data-size="%"
+            />
+            <span class="filter-value filter-value-invert">0</span>
+          </div>
+          <!-- ****** -->
+          <label for="opacity">Opacity: </label>
+          <div class="filter-container">
+            <input
+              class="filter"
+              type="range"
+              id="opacity"
+              min="0"
+              max="100"
+              value="100"
+              data-size="%"
+            />
+            <span class="filter-value filter-value-opacity">100</span>
+          </div>
+          <!-- ****** -->
+          <label for="saturate">Saturate: </label>
+          <div class="filter-container">
+            <input
+              class="filter"
+              type="range"
+              id="saturate"
+              min="0"
+              max="200"
+              value="100"
+              data-size="%"
+            />
+            <span class="filter-value filter-value-saturate">100</span>
+          </div>
+          <!-- ****** -->
+          <label for="sepia">Sepia: </label>
+          <div class="filter-container">
+            <input
+              class="filter"
+              type="range"
+              id="sepia"
+              min="0"
+              max="100"
+              value="0"
+              data-size="%"
+            />
+            <span class="filter-value filter-value-sepia">0</span>
+          </div>
+          <!-- ****** -->
+        </div>
+        <!-- /filters -->
+      </div>
+      <div class="container">
+        <!-- presets -->
+        <div class="presets">
+          <img
+            class="presets-img preset1"
+            src="assets/images/img.jpg"
+            alt="seashell by the sea with filters preset1"
+            width="150"
+            height="100"
+          />
+          <img
+            class="presets-img preset2"
+            src="assets/images/img.jpg"
+            alt="seashell by the sea with filters preset2"
+            width="150"
+            height="100"
+          />
+          <img
+            class="presets-img preset3"
+            src="assets/images/img.jpg"
+            alt="seashell by the sea with filters preset3"
+            width="150"
+            height="100"
+          />
+          <img
+            class="presets-img preset4"
+            src="assets/images/img.jpg"
+            alt="seashell by the sea with filters preset4"
+            width="150"
+            height="100"
+          />
+          <img
+            class="presets-img preset5"
+            src="assets/images/img.jpg"
+            alt="seashell by the sea with filters preset5"
+            width="150"
+            height="100"
+          />
+        </div>
+        <!-- /presets -->
+        <!-- color and size -->
+        <div class="color-and-size">
+          <!-- color -->
+          <label for="bg-color">Change color: </label>
+          <div>
+            <input
+              class="filter filter-color"
+              type="color"
+              id="bg-color"
+              value="#1a1920"
+            />
+            <span class="filter-value filter-value-bg-color">#1a1920</span>
+          </div>
+          <!-- /color -->
+          <!-- size -->
+          <label for="size">Change photo size: </label>
+          <div class="filter-container">
+            <input
+              class="filter"
+              type="range"
+              id="size"
+              min="0.2"
+              max="1"
+              value="1"
+              step="0.01"
+            />
+            <span class="filter-value filter-value-size">1</span>
+          </div>
+          <!-- size -->
+        </div>
+        <!-- /color and size -->
+      </div>
+      <!-- buttons -->
+      <div class="buttons">
+        <div class="button reset-all-btn">Reset all</div>
+        <!-- ****** -->
+        <div class="button reset-filters-btn">Reset filters</div>
+        <!-- ****** -->
+        <label class="button load-btn" for="file"> Load picture</label>
+        <input
+          class="load-file-input"
+          type="file"
+          id="file"
+          accept="image/jpeg"
+        />
+        <!-- ****** -->
+        <a class="save-file" href="" download
+          ><div class="button save-btn">Save picture</div>
+        </a>
+      </div>
+      <!-- /buttons -->
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

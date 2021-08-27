@@ -1,0 +1,180 @@
+:root {
+  --bg-color: #1a1920;
+  --color-gold: #9d8665;
+  --color-white: #ffffff;
+  --constant-bg-color: #1a1920;
+  --constant-bg-color-hover: #000000;
+
+  --font-bold: 700;
+
+  --border-radius: 3px;
+
+  --transition-duration: 0.3s;
+
+  --blur: 0px;
+  --brightness: 100%;
+  --contrast: 100%;
+  --grayscale: 0%;
+  --hue-rotate: 0deg;
+  --invert: 0%;
+  --opacity: 100%;
+  --saturate: 100%;
+  --sepia: 0%;
+
+  --size: 1;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: var(--color-gold);
+  background-color: var(--bg-color);
+}
+
+.main-container {
+  max-width: 1120px;
+  margin: 35px auto;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-img {
+  width: 750px;
+}
+
+.img {
+  width: calc(750px * var(--size));
+  filter: blur(var(--blur)) brightness(var(--brightness))
+    contrast(var(--contrast)) grayscale(var(--grayscale))
+    hue-rotate(var(--hue-rotate)) invert(var(--invert)) opacity(var(--opacity))
+    saturate(var(--saturate)) sepia(var(--sepia));
+}
+
+.filters {
+  background-color: var(--constant-bg-color);
+  padding: 10px 10px 0;
+}
+
+/********* filter *********/
+
+.filter-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 335px;
+  margin-bottom: 20px;
+}
+
+.filter {
+  background: var(--color-gold);
+  border-radius: var(--border-radius);
+  height: 3px;
+  width: 300px;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.filter::-webkit-slider-thumb {
+  width: 15px;
+  height: 15px;
+  background-color: var(--color-gold);
+  border: 1px solid #000;
+  border-radius: 50%;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.filter:hover {
+  cursor: pointer;
+}
+
+/********* /filter *********/
+
+/********* presets *********/
+.presets {
+  font-size: 0; /*чтобы убрать расстояние между img*/
+}
+
+.presets-img:hover {
+  cursor: pointer;
+}
+
+.preset1 {
+  filter: brightness(81%) saturate(190%);
+}
+
+.preset2 {
+  filter: brightness(110%) contrast(111%) hue-rotate(16deg);
+}
+
+.preset3 {
+  filter: grayscale(49%) hue-rotate(339deg) sepia(12%);
+}
+
+.preset4 {
+  filter: saturate(56%) sepia(10%);
+}
+
+.preset5 {
+  filter: sepia(100%) opacity(78%);
+}
+/********* /presets *********/
+
+/********* color *********/
+.color-and-size {
+  background-color: var(--constant-bg-color);
+  padding: 0 10px;
+}
+
+.filter-color {
+  height: 20px;
+  width: 260px;
+  padding: 0;
+  margin-right: 5px;
+  margin-bottom: 20px;
+  margin-top: 5px;
+  background: none;
+  border-radius: var(--border-radius);
+  border: 2px solid var(--color-gold);
+  box-sizing: border-box;
+}
+
+input[type='color']::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+input[type='color']::-webkit-color-swatch {
+  border: none;
+}
+/********* /color *********/
+
+/********* buttons *********/
+.buttons {
+  display: flex;
+  max-width: 750px;
+  justify-content: space-between;
+}
+
+.button {
+  padding: 10px 16px;
+  background-color: var(--constant-bg-color);
+  border: 1px solid var(--color-gold);
+  border-radius: var(--border-radius);
+  transition: background-color var(--transition-duration);
+}
+
+.button:hover {
+  background-color: var(--constant-bg-color-hover);
+  cursor: pointer;
+}
+
+.load-file-input {
+  display: none;
+}
+
+.save-file {
+  text-decoration: none;
+  color: var(--color-gold);
+}
+/********* /buttons *********/
