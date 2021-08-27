@@ -132,3 +132,12 @@ resetFiltersBtn.addEventListener('click', handleOnResetFiltersBtnClick);
 inputLoadFileEl.addEventListener('change', handleOnLoadImg);
 
 saveBtn.addEventListener('click', handleOnSaveBtnClick);
+
+console.log('Самооценка: 30 баллов');
+console.log('Воспроизведение исходного приложения +10 баллов');
+console.log(
+  'Обязательный допольнительный функционал (два дополнительных фильтра и пресеты) +10 баллов',
+);
+console.log(
+  'Дополнительный функционал на выбор (сброс фильтров кликом на кнопку,  загрузка в приложение фото с компьютера, сохранение фото на компьютер вместе с наложенными фильтрами) +10 баллов',
+);
