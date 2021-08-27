@@ -21,7 +21,7 @@
   --saturate: 100%;
   --sepia: 0%;
 
-  --size: 750px;
+  --size: 1;
 }
 
 body {
@@ -40,15 +40,18 @@ body {
   justify-content: space-between;
 }
 
+.container-img {
+  width: 750px;
+}
+
 .img {
-  width: var(--size);
-  height: auto;
-  object-fit: cover;
+  width: calc(750px * var(--size));
   filter: blur(var(--blur)) brightness(var(--brightness))
     contrast(var(--contrast)) grayscale(var(--grayscale))
     hue-rotate(var(--hue-rotate)) invert(var(--invert)) opacity(var(--opacity))
     saturate(var(--saturate)) sepia(var(--sepia));
 }
+
 .filters {
   background-color: var(--constant-bg-color);
   padding: 10px 10px 0;
@@ -168,5 +171,10 @@ input[type='color']::-webkit-color-swatch {
 
 .load-file-input {
   display: none;
+}
+
+.save-file {
+  text-decoration: none;
+  color: var(--color-gold);
 }
 /********* /buttons *********/

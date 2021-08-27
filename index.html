@@ -15,11 +15,13 @@
   <body>
     <main class="main-container">
       <div class="container">
-        <img
-          class="img"
-          src="assets/images/img.jpg"
-          alt="seashell by the sea"
-        />
+        <div class="container-img">
+          <img
+            class="img"
+            src="assets/images/img.jpg"
+            alt="seashell by the sea"
+          />
+        </div>
         <!-- filters -->
         <div class="filters">
           <label for="blur">Blur: </label>
@@ -212,12 +214,12 @@
               class="filter"
               type="range"
               id="size"
-              min="300"
-              max="750"
-              value="750"
-              data-size="px"
+              min="0.2"
+              max="1"
+              value="1"
+              step="0.01"
             />
-            <span class="filter-value filter-value-size">750</span>
+            <span class="filter-value filter-value-size">1</span>
           </div>
           <!-- size -->
         </div>
@@ -229,9 +231,7 @@
         <!-- ****** -->
         <div class="button reset-filters-btn">Reset filters</div>
         <!-- ****** -->
-        <label for="file">
-          <div class="button load-btn">Load picture</div></label
-        >
+        <label class="button load-btn" for="file"> Load picture</label>
         <input
           class="load-file-input"
           type="file"
@@ -239,7 +239,9 @@
           accept="image/jpeg"
         />
         <!-- ****** -->
-        <div class="button save-btn">Save picture</div>
+        <a class="save-file" href="" download
+          ><div class="button save-btn">Save picture</div>
+        </a>
       </div>
       <!-- /buttons -->
     </main>
